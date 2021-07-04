@@ -5,20 +5,23 @@ public class BinaryChop {
         int left = 0;
         int right = array.length-1;
         int middle = (right+left) / 2;
-        int found = -1;
+        int found = -2;
         do {
-            if(array[middle] > number){
+            if(array[middle] < number){
                 left = middle +1;
                 middle = (right+left)/2;
             }
-            else if(array[middle] < number) {
+            else if(array[middle] > number) {
                 right = middle -1 ;
                 middle = (right+left)/2;
             }
             else if(array[middle] == number) {
                 return middle;
             }
-        } while(left!=right);
+            else if(left == right){
+                found = -1;
+            }
+        } while(found == -2);
         return  found;
     }
 }
