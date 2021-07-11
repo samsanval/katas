@@ -31,4 +31,4 @@ function binaryChop(int $number, $array): int
 $array = [1,2,3,5,7.11,16,20];
 sort($array);
 $result = binaryChop(2,$array);
-echo $result . "\n";
+echo "El resultado es :".$result;
