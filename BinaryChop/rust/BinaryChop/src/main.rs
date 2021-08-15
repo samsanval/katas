@@ -53,9 +53,9 @@ fn main() {
     }
     let start_time_iterative = Instant::now();
     let result = binary_chop(0, &array);
-    print!("El resultado es {} con un tiempo de ejecución de {} \n", result, start_time_iterative.elapsed().as_secs_f64());
+    print!("El resultado es {} con un tiempo de ejecución de {} \n", result, start_time_iterative.elapsed().as_nanos());
 
     let start_time_recursive = Instant::now();
     let result_recursive = binary_chop_recursive(0, &array, 0, array.len());
-    print!("El resultado es {} con un tiempo de ejecución de {} \n", result_recursive, start_time_recursive.elapsed().as_secs_f64());
+    print!("El resultado es {} con un tiempo de ejecución de {} \n", result_recursive, start_time_recursive.elapsed().as_nanos());
 }

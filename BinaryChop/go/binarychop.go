@@ -52,11 +52,11 @@ func main() {
 		i = i + 1
 	}
 	startIterative := time.Now()
-	fmt.Println(chop(3, array))
+	fmt.Println(chop(0, array))
 	endTimeIterative := time.Since(startIterative)
 	fmt.Printf("Execution time iterative %d \n", endTimeIterative.Nanoseconds())
 	startRecursive := time.Now()
-	fmt.Println(chopRecursive(3, array, 0, len(array)))
+	fmt.Println(chopRecursive(0, array, 0, len(array)))
 	endTimeRecursive := time.Since(startRecursive)
 	fmt.Printf("Execution time recursive %d \n", endTimeRecursive.Nanoseconds())
 
