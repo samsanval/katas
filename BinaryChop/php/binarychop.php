@@ -33,8 +33,8 @@ function binaryChopRecursive(int $number, array $array, int $left, int $right): 
     if($array[$middle] === $number){
         return $middle;
     }
-    if($left === $right) {
-        return 0;
+    if($left > $right) {
+        return -1;
     }
     if($array[$middle] < $number) {
         $left = $middle + 1;
@@ -52,10 +52,13 @@ for ($i = 0; $i < 10000; $i++) {
     $array[] = $i;
 }
 $startTimeIterative = microtime(true);
-$result = binaryChop(6,$array);
+$result = binaryChop(0,$array);
 echo "El resultado es : $result \n";
 $timeIterative = microtime(true) - $startTimeIterative;
 echo "Execution time iterative $timeIterative\n";
+$startTimeRecursive = microtime(true);
+$resultRecursive = binaryChopRecursive(0,$array,0,sizeof($array)-1);
+$timeRecursive = microtime(true) - $startTimeRecursive;
 
-$resultRecursive = binaryChopRecursive(6,$array,0,sizeof($array)-1);
 echo "El resultado recursivo es: $result \n";
+echo "Execution time recursive $timeRecursive\n";
